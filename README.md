@@ -1,2 +1,2 @@
 # algorithm-list
-a repo for algorithm exercise
+A repo for algorithm exercise.
