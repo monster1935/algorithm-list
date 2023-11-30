@@ -1,5 +1,5 @@
 # algorithm-list
-A repo for algorithm exercise. Get forward everyday, in Chinese called 「日拱一卒」。
+A repo for algorithm exercise. Get forward everyday, in Chinese it called 「日拱一卒」。
 
 ## 二叉树系列
 
