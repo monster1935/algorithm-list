@@ -22,7 +22,6 @@ var addStrings = function (num1, num2) {
     let result = x + y + add;
     res.push(result % 10);
     add = Math.floor(result / 10);
-    2;
     len1 -= 1;
     len2 -= 1;
   }
