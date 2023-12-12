@@ -3,15 +3,13 @@
  *
  * [146] LRU 缓存
  */
-
+// @lc code=start
 var ListNode = function (key, value) {
   this.key = key;
   this.value = value;
   this.prev = null;
   this.next = null;
 };
-
-// @lc code=start
 /**
  * @param {number} capacity
  */
@@ -36,25 +34,6 @@ LRUCache.prototype.get = function (key) {
   return node.value;
 };
 
-LRUCache.prototype.moveToHead = function (node) {
-  this.removeFromList(node);
-  this.addToHead(node);
-};
-
-LRUCache.prototype.addToHead = function (node) {
-  node.prev = this.dummyHead;
-  node.next = this.dummyHead.next;
-  this.dummyHead.next.prev = node;
-  this.dummyHead.next = node;
-};
-
-LRUCache.prototype.removeFromList = function (node) {
-  let temp1 = node.prev;
-  let temp2 = node.next;
-  temp1.next = temp2;
-  temp2.prev = temp1;
-};
-
 /**
  * @param {number} key
  * @param {number} value
@@ -74,6 +53,25 @@ LRUCache.prototype.put = function (key, value) {
     node.value = value;
     this.moveToHead(node);
   }
+};
+
+LRUCache.prototype.moveToHead = function (node) {
+  this.removeFromList(node);
+  this.addToHead(node);
+};
+
+LRUCache.prototype.addToHead = function (node) {
+  node.prev = this.dummyHead;
+  node.next = this.dummyHead.next;
+  this.dummyHead.next.prev = node;
+  this.dummyHead.next = node;
+};
+
+LRUCache.prototype.removeFromList = function (node) {
+  let temp1 = node.prev;
+  let temp2 = node.next;
+  temp1.next = temp2;
+  temp2.prev = temp1;
 };
 
 LRUCache.prototype.removeLRUItem = function () {
