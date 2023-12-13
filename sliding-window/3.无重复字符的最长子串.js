@@ -23,8 +23,8 @@ var lengthOfLongestSubstring = function (s) {
     } else {
       window[c]++;
     }
+    // 有重复的情况下缩减窗口
     while (window[c] > 1) {
-      // 有重复
       const d = s[left];
       left++;
       window[d]--;
